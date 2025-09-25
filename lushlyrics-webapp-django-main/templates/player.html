@@ -34,7 +34,7 @@
                         d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z"
                         fill="grey"></path>
                 </svg>
-                <a class='label' href="/">Home</a>
+                <a class='label' href="{% url 'default' %}">Home</a>
             </div>
             <div class="options search {% block search %}{% endblock %}" onclick="document.getElementById('searchBar').focus();">
                 <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@
                         d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z"
                         fill="grey"></path>
                 </svg>
-                <a href="/playlist" class='label'>Your Library</a>
+                <a href="{% url 'your_playlists' %}" class='label'>Your Library</a>
             </div>
 
             <!-- brk change -->
@@ -91,7 +91,7 @@
   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
 </svg>
             </a>
-            <form action="/search" method="get" name="search-form">
+            <form action="{% url 'search_page' %}" method="get" name="search-form">
                 <div class="searchCont">
             <svg onClick="document.forms['search-form'].submit();" class='searchBarIcon' viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                     <path class='ops'
@@ -105,7 +105,7 @@
         </div>
 
 
-        <a class="profile-container" href="{% url 'account:logout' %}">
+        <a class="profile-container" href="{% url 'logout' %}">
             <button class="profile">
                 <div class="profile-pic">
                     <svg width="16" height="16" fill="white" viewBox="0 0 18 20" xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@
                         </path>
                     </svg>
                 </div>
-                <span class='username hide-onhover'>{{ request.user }}</span>
+                <span class='username hide-onhover'>{{ request.user.username }}</span>
                 <span class='logout username'>Logout</span>
             </button>
 

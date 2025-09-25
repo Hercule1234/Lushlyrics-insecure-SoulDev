@@ -27,7 +27,7 @@ def register(request):
 
         #create user using custom manager
         try:
-            user = UserModel.objects.create(
+            user = UserModel.objects.create_user(
                 email = email,
                 password = password,
                 username = username,
@@ -49,10 +49,11 @@ def login_view(request):
         
         user = authenticate(request, email=email, password=password)
         if user is not None:
-            auth.login(request,user)
-            return redirect('playlist.html')
+            auth.login(request, user)
+            return redirect('default')
         else:
-            return render(request, 'home/login', {"error": "Email or password incorrect !"})
+            return render(request, 'home/login.html', {"error": "Email or password incorrect !"})
+        
     return render(request,'home/login.html')
 
 def logout_view(request):
