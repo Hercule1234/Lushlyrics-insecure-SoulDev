@@ -10,18 +10,14 @@
     <meta name="keywords"
         content="convert, convert playlists, transfer, syncing, smart links, free, apple music, streaming services" />
   {% block css %}
-	<link rel="stylesheet" href="{% static "formStyle.css" %}">
+	<link rel="stylesheet" href="{% static 'formStyle.css' %}">
   {% endblock %}
 	<title>Youttify</title>
 </head>
 
 <body>
-
-
 			<div class="signup_header">
-                <a href="" target="_blank">
-				
-                    </a>
+                <a href="" target="_blank"></a>
             </div>
         </a>
         <div class="signup_body">
@@ -43,17 +39,20 @@
                              text-align:center;">{{ error }}</span>
                 {% endif %}
                 <button class='btn btn_log_in' type="submit">Log in</button>
+                <a href="{% url 'password_reset' %}" style="text-align: center; margin-top: 15px; text-decoration: none; color: brown;">forgotten password ?</a>
                 <div class="divider"></div>
                 <p class='label center-align'>Don't have an account?</p>
             <a class='btn btn_sign_up' href="{% url 'register' %}">Sign Up for Lushlyrics</a>
             </form>
         </div>
 
-        <!-- <div class="signin_body">
-
-        </div> -->
-
     </body>
 </body>
 
-</html>
+</html> 
+
+
+
+
+
+

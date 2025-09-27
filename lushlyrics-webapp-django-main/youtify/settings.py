@@ -12,11 +12,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.contrib.messages import constants as messages
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -135,3 +137,18 @@ MESSAGE_TAGS = {
 
 # authentication type model
 AUTH_USER_MODEL = "account.UserModel"
+
+
+# configure email setup 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'  # ou l'adresse de votre serveur SMTP
+EMAIL_PORT = 2525         # ou 25 pour SMTP standard
+EMAIL_USE_TLS = False     # ⚠️ Important : désactiver TLS
+EMAIL_USE_SSL = False     # Désactiver SSL aussi
+EMAIL_HOST_USER = ''      # Vide si pas d'authentification
+EMAIL_HOST_PASSWORD = ''  # Vide si pas d'authentification
+
+
+
+
+# mailtrap token : de588c4467824c5edb18b97ee71c534e

@@ -36,9 +36,12 @@ body {
   transform: translateX(-8px);
 }
 
+.signup_body{
+   background-color: #d9dadc;
+}
+
 .signup_body,
 .login_form {
-  background: white;
   height: 100%;
   display: flex;
   flex-direction: column;
