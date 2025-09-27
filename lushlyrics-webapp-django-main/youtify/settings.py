@@ -148,7 +148,3 @@ EMAIL_USE_SSL = False     # Désactiver SSL aussi
 EMAIL_HOST_USER = ''      # Vide si pas d'authentification
 EMAIL_HOST_PASSWORD = ''  # Vide si pas d'authentification
 
-
-
-
-# mailtrap token : de588c4467824c5edb18b97ee71c534e
